@@ -1,0 +1,27 @@
+name: 'servarr'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-runner:
+    runs-on: [self-hostted]
+ #   env:
+#      JUPYTER_NOTEBOOK_PASSWORD: ${{ secrets.JUPYTER_NOTEBOOK_PASSWORD }}
+    steps:
+   #   - name: Refresh images
+  #      run: |
+  #        docker image pull actuary/hub:main
+  #        docker image pull actuary/notebook:main
+      - name: Checkout
+        uses: actions/checkout@v4.0.0
+      #- name: 'Create env file'
+     #   run: |
+     #     echo "${{ secrets.OAUTH }}" > oauth.env
+     #docker stack rm external
+          #sleep 5
+      - name: Remove and redeploy services
+        run: |
+          docker stack deploy -c servarr.yaml arr
