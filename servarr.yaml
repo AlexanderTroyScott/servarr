@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /mnt/user/services/servarr/sonarr:/config
+      - media:/data
+      #- /path/to/tvseries:/tv #optional
+      #- /path/to/downloadclient-downloads:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+networks:
+  reverse-proxy:
+    external: true
+    
+volumes:
+  media:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=unraid.lan,rw,hard"
+      device: ":/mnt/user/Media/"
