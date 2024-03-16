@@ -3,6 +3,7 @@ version: "3.9"
 services:
   curl:
     image: curlimages/curl
+    command: ["curl", "https://www.ipconfig.io"]
     networks:
      - vpn
   gluetun:
