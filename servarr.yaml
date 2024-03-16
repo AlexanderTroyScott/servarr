@@ -23,6 +23,23 @@ services:
       - /mnt/user/services/servarr/gluetun:/gluetun
    # networks:
     # - reverse-proxy
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    network_mode: "service:glueton"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DELUGE_LOGLEVEL=error #optional
+    volumes:
+      - /mnt/user/services/servarr/deluge/config:/config
+      - /mnt/user/Media/Torrents:/downloads
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+      - 58846:58846 #optional
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     environment:
