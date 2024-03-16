@@ -45,25 +45,23 @@ services:
       - /mnt/user/Media/Usenets:/downloads
     ports:
       - "8081:8080"
-  deluge:
-    image: lscr.io/linuxserver/deluge:latest
-    #container_name: deluge
-    networks:
-     - vpn
-    environment:
-      - PUID=99
-      - PGID=100
-      - TZ=America/Chicago
-      - DELUGE_LOGLEVEL=error #optional
-    volumes:
-      - /mnt/user/services/servarr/deluge/config:/config
-      - /mnt/user/Media/Torrents:/downloads
-      #- /mnt/user/Media/:/unraid
-    ports:
-      - 8112:8112
-      - 6881:6881
-      - 6881:6881/udp
-      - 58846:58846 #optional
+  #deluge:
+    #image: lscr.io/linuxserver/deluge:latest
+    #networks:
+     #- vpn
+    #environment:
+      #- PUID=99
+      #- PGID=100
+      #- TZ=America/Chicago
+      #- DELUGE_LOGLEVEL=error #optional
+    #volumes:
+      #- /mnt/user/services/servarr/deluge/config:/config
+      #- /mnt/user/Media/Torrents:/downloads
+    #ports:
+      #- 8112:8112
+      #- 6881:6881
+      #- 6881:6881/udp
+      #- 58846:58846 #optional
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     environment:
