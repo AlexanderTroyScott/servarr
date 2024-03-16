@@ -28,7 +28,7 @@ services:
     #container_name: deluge
     #network_mode: "service:glueton"
     environment:
-      - PUID=1000
+      - PUID=99
       - PGID=100
       - TZ=America/Chicago
       - DELUGE_LOGLEVEL=error #optional
