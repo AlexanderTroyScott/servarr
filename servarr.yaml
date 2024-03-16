@@ -6,31 +6,22 @@ services:
     command: ["curl", "https://www.ipconfig.io"]
     networks:
      - vpn
-  gluetun:
-    image: qmcgaw/gluetun:latest
-    cap_add:
-     - NET_ADMIN
-    devices:
-     - /dev/net/tun
-    networks:
-     - vpn
-    environment:
-      TZ: America/Chicago
-      VPN_SERVICE_PROVIDER: custom
-      VPN_TYPE: openvpn
-      OPENVPN_CUSTOM_CONFIG: /gluetun/custom.conf
-      
-      #VPN_TYPE: wireguard
-      #Bind mounting the configuration file instead of populating environment variables
-      #VPN_ENDPOINT_IP: 185.144.83.13
-      #VPN_ENDPOINT_PORT: 15254
-      #- WIREGUARD_PUBLIC_KEY:
-      #- WIREGUARD_PRIVATE_KEY:
-      #- WIREGUARD_PRESHARED_KEY:
-      #- WIREGUARD_ADDRESSES:
-    volumes:
+  #gluetun:
+    #image: qmcgaw/gluetun:latest
+    #cap_add:
+     #- NET_ADMIN
+    #devices:
+     #- /dev/net/tun
+    #networks:
+     #- vpn
+    #environment:
+      #TZ: America/Chicago
+      #VPN_SERVICE_PROVIDER: custom
+     # VPN_TYPE: wireguard
+      #OPENVPN_CUSTOM_CONFIG: /gluetun/custom.conf
+    #volumes:
      #Wireguard configuration file on host is in ./glueton/wireguard/wg0.conf
-      - /mnt/user/services/servarr/gluetun:/gluetun
+    #  - /mnt/user/services/servarr/gluetun:/gluetun
    # networks:
     # - reverse-proxy
   sabnzbd:
