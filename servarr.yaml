@@ -3,7 +3,6 @@ version: "3.9"
 services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
-    container_name: sonarr
     environment:
       - PUID=1000
       - PGID=1000
@@ -13,10 +12,10 @@ services:
       - media:/data
     ports:
       - 8989:8989
-    restart: unless-stopped
+    networks:
+     - reverse-proxy
   radarr:
     image: lscr.io/linuxserver/radarr:latest
-    container_name: radarr
     environment:
       - PUID=1000
       - PGID=1000
@@ -26,7 +25,20 @@ services:
       - media:/data
     ports:
       - 7878:7878
-    restart: unless-stopped
+    networks:
+     - reverse-proxy
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:develop
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /mnt/user/services/servarr/prowlarr:/config
+    ports:
+      - "9696:9696"
+    networks:
+     - reverse-proxy
 
 networks:
   reverse-proxy:
