@@ -31,9 +31,9 @@ services:
       - PUID=1000
       - PGID=100
       - TZ=America/Chicago
-      - DELUGE_LOGLEVEL=error #optional
+      - DELUGE_LOGLEVEL=debug #optional
     volumes:
-      - /mnt/user/services/servarr/deluge/config:/config
+      #- /mnt/user/services/servarr/deluge/config:/config
       - /mnt/user/Media/Torrents:/downloads
       #- /mnt/user/Media/:/unraid
     ports:
