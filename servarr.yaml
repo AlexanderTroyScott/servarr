@@ -17,10 +17,13 @@ services:
     environment:
       TZ: America/Chicago
       VPN_SERVICE_PROVIDER: custom
-      VPN_TYPE: wireguard
+      VPN_TYPE: openvpn
+      OPENVPN_CUSTOM_CONFIG: /gluetun/custom.conf
+      
+      #VPN_TYPE: wireguard
       #Bind mounting the configuration file instead of populating environment variables
-      VPN_ENDPOINT_IP: 185.144.83.13
-      VPN_ENDPOINT_PORT: 15254
+      #VPN_ENDPOINT_IP: 185.144.83.13
+      #VPN_ENDPOINT_PORT: 15254
       #- WIREGUARD_PUBLIC_KEY:
       #- WIREGUARD_PRIVATE_KEY:
       #- WIREGUARD_PRESHARED_KEY:
