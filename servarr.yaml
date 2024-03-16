@@ -9,8 +9,8 @@ services:
       - /dev/net/tun
     environment:
       TZ: America/Chicago
-      VPN_SERVICE_PROVIDER: custom
-      VPN_TYPE: wireguard
+      #VPN_SERVICE_PROVIDER: custom
+      #VPN_TYPE: wireguard
       #Bind mounting the configuration file instead of populating environment variables
       #- VPN_ENDPOINT_IP:
       #- VPN_ENDPOINT_PORT:
@@ -21,8 +21,8 @@ services:
    # volumes:
      #Wireguard configuration file on host is in ./glueton/wireguard/wg0.conf
      # - /mnt/user/services/servarr/gluetun:/gluetun
-    networks:
-     - reverse-proxy
+   # networks:
+    # - reverse-proxy
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     environment:
