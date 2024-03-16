@@ -28,9 +28,9 @@ services:
     #container_name: deluge
     #network_mode: "service:glueton"
     environment:
-      - PUID=0
-      - PGID=0
-      - TZ=Etc/UTC
+      - PUID=1000
+      - PGID=100
+      - TZ=America/Chicago
       - DELUGE_LOGLEVEL=error #optional
     volumes:
       - /mnt/user/services/servarr/deluge/config:/config
