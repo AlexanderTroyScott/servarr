@@ -33,7 +33,7 @@ services:
       - TZ=America/Chicago
       - DELUGE_LOGLEVEL=error #optional
     volumes:
-      - /mnt/user/services/servarr/deluge/config:/config
+      #- /mnt/user/services/servarr/deluge/config:/config
       #- /mnt/user/Media/Torrents:/downloads
       - /mnt/user/Media/:/unraid
     ports:
