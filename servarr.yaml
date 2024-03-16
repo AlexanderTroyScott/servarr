@@ -25,8 +25,8 @@ services:
     # - reverse-proxy
   deluge:
     image: lscr.io/linuxserver/deluge:latest
-    container_name: deluge
-    network_mode: "service:glueton"
+    #container_name: deluge
+    #network_mode: "service:glueton"
     environment:
       - PUID=1000
       - PGID=1000
