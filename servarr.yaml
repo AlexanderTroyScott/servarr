@@ -34,7 +34,7 @@ services:
    # networks:
     # - reverse-proxy
   sabnzbd:
-    image: lscr.io/linuxserver/sabnzbd:4.2.3-unstable
+    image: lscr.io/linuxserver/sabnzbd:4.2.3
     environment:
       - PUID=99
       - PGID=100
