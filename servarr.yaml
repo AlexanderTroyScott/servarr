@@ -2,13 +2,13 @@ version: "3.9"
 
 services:
   gluetun:
-    image: qmcgaw:gluetun
+    image: qmcgaw/gluetun:latest
    # cap_add:
    #   - NET_ADMIN
    # devices:
    #   - /dev/net/tun
-    environment:
-      TZ: America/Chicago
+ #   environment:
+   #   TZ: America/Chicago
       #VPN_SERVICE_PROVIDER: custom
       #VPN_TYPE: wireguard
       #Bind mounting the configuration file instead of populating environment variables
