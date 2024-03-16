@@ -34,7 +34,8 @@ services:
       - DELUGE_LOGLEVEL=error #optional
     volumes:
       - /mnt/user/services/servarr/deluge/config:/config
-      - /mnt/user/Media/Torrents:/downloads
+      #- /mnt/user/Media/Torrents:/downloads
+      - /mnt/user/Media/:/unraid
     ports:
       - 8112:8112
       - 6881:6881
