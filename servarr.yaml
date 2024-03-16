@@ -33,6 +33,18 @@ services:
       - /mnt/user/services/servarr/gluetun:/gluetun
    # networks:
     # - reverse-proxy
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:latest
+    environment:
+      - PUID=99
+      - PGID=100
+      - TZ=America/Chicago
+      - UMASK=002
+    volumes:
+      - /mnt/user/services/servarr/sabnzbd:/config
+      - /mnt/user/Media/Usenets:/downloads
+    ports:
+      - "8081:8080"
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     #container_name: deluge
