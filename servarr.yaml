@@ -18,9 +18,9 @@ services:
       #- WIREGUARD_PRIVATE_KEY:
       #- WIREGUARD_PRESHARED_KEY:
       #- WIREGUARD_ADDRESSES:
-    volumes:
+   # volumes:
      #Wireguard configuration file on host is in ./glueton/wireguard/wg0.conf
-      - /mnt/user/services/servarr/gluetun:/gluetun
+     # - /mnt/user/services/servarr/gluetun:/gluetun
     networks:
      - reverse-proxy
   sonarr:
