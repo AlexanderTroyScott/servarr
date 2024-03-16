@@ -1,6 +1,10 @@
 version: "3.9"
 
 services:
+  curl:
+    image: curlimages/curl
+    networks:
+      - vpn
   gluetun:
     image: qmcgaw/gluetun:latest
     cap_add:
