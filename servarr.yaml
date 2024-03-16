@@ -7,6 +7,8 @@ services:
       - NET_ADMIN
     devices:
       - /dev/net/tun
+    networks:
+      - vpn
     environment:
       TZ: America/Chicago
       VPN_SERVICE_PROVIDER: custom
@@ -26,7 +28,8 @@ services:
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     #container_name: deluge
-    network_mode: "service:gluetun"
+    networks:
+     - vpn
     environment:
       - PUID=99
       - PGID=100
@@ -82,6 +85,8 @@ services:
 
 networks:
   reverse-proxy:
+    external: true
+  vpn:
     external: true
     
 volumes:
