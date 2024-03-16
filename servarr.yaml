@@ -4,15 +4,15 @@ services:
   curl:
     image: curlimages/curl
     networks:
-      - vpn
+     - vpn
   gluetun:
     image: qmcgaw/gluetun:latest
     cap_add:
-      - NET_ADMIN
+     - NET_ADMIN
     devices:
-      - /dev/net/tun
+     - /dev/net/tun
     networks:
-      - vpn
+     - vpn
     environment:
       TZ: America/Chicago
       VPN_SERVICE_PROVIDER: custom
