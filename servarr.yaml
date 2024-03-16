@@ -8,9 +8,9 @@ services:
     devices:
       - /dev/net/tun
     environment:
-      - TZ: America/Chicago
-      - VPN_SERVICE_PROVIDER: custom
-      - VPN_TYPE: wireguard
+      TZ: America/Chicago
+      VPN_SERVICE_PROVIDER: custom
+      VPN_TYPE: wireguard
       #Bind mounting the configuration file instead of populating environment variables
       #- VPN_ENDPOINT_IP:
       #- VPN_ENDPOINT_PORT:
