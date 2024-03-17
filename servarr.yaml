@@ -18,8 +18,8 @@ services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=99
+      - PGID=100
       - TZ=America/Chicago
     volumes:
       - /mnt/user/services/servarr/sonarr:/config
@@ -31,8 +31,8 @@ services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=99
+      - PGID=100
       - TZ=America/Chicago
     volumes:
       - /mnt/user/services/servarr/radarr:/config
