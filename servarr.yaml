@@ -44,7 +44,7 @@ services:
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:develop
     environment:
-      - PUID=2000
+      - PUID=99
       - PGID=100
       - TZ=America/Chicago
     volumes:
