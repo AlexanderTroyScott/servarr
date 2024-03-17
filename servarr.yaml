@@ -13,6 +13,8 @@ services:
       - /mnt/user/Media/Usenets:/downloads
     ports:
       - "8081:8080"
+    networks:
+     - reverse-proxy
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     environment:
@@ -54,8 +56,6 @@ services:
 
 networks:
   reverse-proxy:
-    external: true
-  vpn:
     external: true
     
 volumes:
