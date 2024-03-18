@@ -15,6 +15,19 @@ services:
       - "8081:8080"
     networks:
      - reverse-proxy
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    environment:
+      - PUID=99
+      - PGID=100
+      - TZ=America/Chicago
+    volumes:
+      - /mnt/user/services/servarr/lidarr:/config
+      - media:/data
+    ports:
+      - 8686:8686
+    networks:
+     - reverse-proxy
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     environment:
