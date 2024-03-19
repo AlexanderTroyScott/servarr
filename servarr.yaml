@@ -10,7 +10,7 @@ services:
       - UMASK=002
     volumes:
       - /mnt/user/services/servarr/sabnzbd:/config
-      - /mnt/user/Media/Usenets:/downloads
+      - /mnt/user/Media/Usenets:/data/Usenets
     ports:
       - "8081:8080"
     networks:
