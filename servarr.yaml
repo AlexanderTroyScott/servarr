@@ -20,6 +20,14 @@ services:
       - 32400:32400 
     networks:
      - reverse-proxy
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.plex.rule=Host(`plex.actuary.dev`)"
+        - "traefik.http.routers.plex.entrypoints=websecure"                   
+        - "traefik.http.routers.plex.service=proxyplex"
+        - "traefik.http.routers.plex.tls.certresolver=myresolver"
+        - "traefik.http.services.proxyplex.loadbalancer.server.port=32400"
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd:4.2.3
     environment:
