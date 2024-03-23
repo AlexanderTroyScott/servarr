@@ -1,6 +1,25 @@
 version: "3.9"
 
 services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: bridge #host
+    environment:
+      - PUID=99
+      - PGID=100
+      - TZ=America/Chicago
+      - VERSION=docker
+      - PLEX_CLAIM= ${{ secrets.PLEX_CLAIM }}
+    volumes:
+      - /mnt/user/services/plex:/config
+      - /mnt/user/Media/Library/TV:/tv
+      - /mnt/user/Media/Library/Movies:/movies
+      - /mnt/user/Media/Library/Music:/music
+    ports:
+      - 32400:32400 
+    networks:
+     - reverse-proxy
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd:4.2.3
     environment:
