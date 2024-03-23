@@ -25,8 +25,9 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.plex.rule=Host(`plex.actuary.dev`)"
         - "traefik.http.routers.plex.entrypoints=websecure"
+        - "traefik.http.routers.plex.service=plex"
         - "traefik.http.routers.plex.tls.certresolver=myresolver"
-        - "traefik.http.services.plex.loadbalancer.server.port=32400"    
+        - "traefik.http.services.plex.loadbalancer.server.port=32400"
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd:4.2.3
     environment:
