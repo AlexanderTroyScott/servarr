@@ -4,7 +4,7 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
-    network_mode: bridge #host
+    #network_mode: bridge #host
     environment:
       - PUID=99
       - PGID=100
