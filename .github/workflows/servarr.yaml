@@ -16,7 +16,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
       - name: Run a container command
-          env:
-            PLEX_CLAIM: ${{ secrets.PLEX_CLAIM }}
+        env:
+          PLEX_CLAIM: ${{ secrets.PLEX_CLAIM }}
         run: |
           docker stack deploy -c servarr.yaml arr
