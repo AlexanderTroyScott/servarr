@@ -73,6 +73,8 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.sonarr.rule=Host(`sonarr.lan`)"
         - "traefik.http.routers.sonarr.entrypoints=web"
+        - "traefik.http.routers.sonarr.service=sonarr"
+        - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     environment:
