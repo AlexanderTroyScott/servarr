@@ -67,7 +67,11 @@ services:
     ports:
       - 8989:8989
     networks:
-     - reverse-proxy
+      - reverse-proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sonarr.rule=Host(`sonarr.lan`)"
+      - "traefik.http.routers.sonarr.entrypoints=web"
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     environment:
