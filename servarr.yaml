@@ -50,8 +50,8 @@ services:
     volumes:
       - /mnt/user/services/servarr/lidarr:/config
       - /mnt/user/library/music:/data/music
-      - /mnt/user/library/.torrents/music:/data/torrents
-      - /mnt/user/library/.usenets/music:/data/usenets
+      - /mnt/user/library/.torrents:/data/torrents
+      - /mnt/user/library/.usenets:/data/usenets
     ports:
       - 8686:8686
     networks:
@@ -65,8 +65,8 @@ services:
     volumes:
       - /mnt/user/services/servarr/sonarr:/config
       - /mnt/user/library/shows:/data/shows
-      - /mnt/user/library/.torrents/shows:/data/torrents
-      - /mnt/user/library/.usenets/shows:/data/usenets
+      - /mnt/user/library/.torrents:/data/torrents
+      - /mnt/user/library/.usenets:/data/usenets
     ports:
       - 8989:8989
     networks:
@@ -88,8 +88,8 @@ services:
     volumes:
       - /mnt/user/services/servarr/radarr:/config
       - /mnt/user/library/movies:/data/movies
-      - /mnt/user/library/.torrents/movies:/data/torrents
-      - /mnt/user/library/.usenets/movies:/data/usenets
+      - /mnt/user/library/.torrents:/data/torrents
+      - /mnt/user/library/.usenets:/data/usenets
     ports:
       - 7878:7878
     networks:
