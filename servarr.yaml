@@ -13,9 +13,9 @@ services:
       - PLEX_CLAIM
     volumes:
       - /mnt/user/services/plex:/config
-      - /mnt/user/Media/Library/TV:/tv
-      - /mnt/user/Media/Library/Movies:/movies
-      - /mnt/user/Media/Library/Music:/music
+      - /mnt/user/library/shows:/tv
+      - /mnt/user/library/movies:/movies
+      - /mnt/user/library/music:/music
     ports:
       - 32400:32400 
     networks:
@@ -37,7 +37,7 @@ services:
       - UMASK=002
     volumes:
       - /mnt/user/services/servarr/sabnzbd:/config
-      - /mnt/user/Media/Usenets:/data/Usenets
+      - /mnt/user/library/.usenets:/data/Usenets
     ports:
       - "8081:8080"
     networks:
@@ -50,7 +50,9 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt/user/services/servarr/lidarr:/config
-      - media:/data
+      - /mnt/user/library/music:/data/music
+      - /mnt/user/library/.torrents/music:/data/torrents
+      - /mnt/user/library/.usenets/music:/data/usenets
     ports:
       - 8686:8686
     networks:
@@ -63,7 +65,9 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt/user/services/servarr/sonarr:/config
-      - media:/data
+      - /mnt/user/library/shows:/data/shows
+      - /mnt/user/library/.torrents/shows:/data/torrents
+      - /mnt/user/library/.usenets/shows:/data/usenets
     ports:
       - 8989:8989
     networks:
@@ -84,7 +88,9 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt/user/services/servarr/radarr:/config
-      - media:/data
+      - /mnt/user/library/movies:/data/movies
+      - /mnt/user/library/.torrents/movies:/data/torrents
+      - /mnt/user/library/.usenets/movies:/data/usenets
     ports:
       - 7878:7878
     networks:
@@ -105,14 +111,7 @@ services:
 networks:
   reverse-proxy:
     external: true
-    
-volumes:
-  media:
-    driver: local
-    driver_opts:
-      type: "nfs"
-      o: "addr=unraid.lan,rw,hard"
-      device: ":/mnt/user/Media/"
+
 #gluetun:
     #image: qmcgaw/gluetun:latest
     #cap_add:
