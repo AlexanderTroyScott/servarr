@@ -4,7 +4,6 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
-    #network_mode: bridge #host
     environment:
       - PUID=99
       - PGID=100
@@ -37,7 +36,7 @@ services:
       - UMASK=002
     volumes:
       - /mnt/user/services/servarr/sabnzbd:/config
-      - /mnt/user/library/.usenets:/data/Usenets
+      - /mnt/user/library/.usenets:/data/usenets
     ports:
       - "8081:8080"
     networks:
