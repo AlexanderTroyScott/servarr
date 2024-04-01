@@ -66,7 +66,7 @@ services:
     volumes:
       - /mnt/user/services/servarr/sonarr:/config
       - /mnt/user/library/shows:/data/shows
-      - /mnt/user/library/anime:/data/anime
+      - /mnt/user/library/anime/series:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets:/data/usenets
     ports:
@@ -90,7 +90,7 @@ services:
     volumes:
       - /mnt/user/services/servarr/radarr:/config
       - /mnt/user/library/movies:/data/movies
-      - /mnt/user/library/anime:/data/anime
+      - /mnt/user/library/anime/movies:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets:/data/usenets
     ports:
