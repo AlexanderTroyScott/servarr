@@ -65,7 +65,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt/user/services/servarr/sonarr:/config
-      - /mnt/user/library/shows:/data/shows
+      - /mnt/user/library/shows:/data/tv
       #- /mnt/user/library/tv:/data/tv
       - /mnt/user/library/anime/series:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
