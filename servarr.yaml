@@ -82,6 +82,7 @@ services:
         - "traefik.http.routers.sonarr.service=sonarr"
         - "traefik.http.routers.sonarr.tls=true"
         - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+        - "traefik.http.routers.sonarr.middlewares=middlewares-authentik@file"
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     environment:
