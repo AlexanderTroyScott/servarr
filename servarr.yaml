@@ -11,7 +11,7 @@ services:
       - VERSION=docker
       - PLEX_CLAIM
     volumes:
-      - /mnt/user/services/plex:/config
+      - /mnt/user/docker/volumes/plex:/config/'Plex Media Server'
       - /mnt/user/library/shows:/tv
       - /mnt/user/library/movies:/movies
       - /mnt/user/library/music:/music
@@ -36,7 +36,7 @@ services:
       - TZ=America/Chicago
       - UMASK=002
     volumes:
-      - /mnt/user/services/servarr/sabnzbd:/config
+      - /mnt/user/docker/volumes/sabnzbd:/config
       - /mnt/user/library/.usenets:/data/usenets
     ports:
       - "8081:8080"
@@ -49,7 +49,7 @@ services:
       - PGID=100
       - TZ=America/Chicago
     volumes:
-      - /mnt/user/services/servarr/lidarr:/config
+      - /mnt/user/docker/volumes/lidarr:/config
       - /mnt/user/library/music:/data/music
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets:/data/usenets
@@ -64,7 +64,7 @@ services:
       - PGID=100
       - TZ=America/Chicago
     volumes:
-      - /mnt/user/services/servarr/sonarr:/config
+      - /mnt/user/docker/volumes/sonarr:/config
       - /mnt/user/library/shows:/data/shows
       #- /mnt/user/library/tv:/data/tv
       - /mnt/user/library/anime/series:/data/anime
@@ -90,7 +90,7 @@ services:
       - PGID=100
       - TZ=America/Chicago
     volumes:
-      - /mnt/user/services/servarr/radarr:/config
+      - /mnt/user/docker/volumes/radarr:/config
       - /mnt/user/library/movies:/data/movies
       - /mnt/user/library/anime/movies:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
@@ -106,7 +106,7 @@ services:
       - PGID=100
       - TZ=America/Chicago
     volumes:
-      - /mnt/user/services/servarr/prowlarr:/config
+      - /mnt/user/docker/volumes/prowlarr:/config
     ports:
       - "9696:9696"
     networks:
