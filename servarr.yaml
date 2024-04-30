@@ -31,8 +31,8 @@ services:
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd:latest
     environment:
-      - PUID=99
-      - PGID=100
+      #- PUID=99
+      #- PGID=100
       - TZ=America/Chicago
       - UMASK=002
     volumes:
