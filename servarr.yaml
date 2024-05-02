@@ -11,7 +11,7 @@ services:
       - VERSION=docker
       - PLEX_CLAIM
     volumes:
-      - /mnt/user/docker/volumes/plex:/config/'Plex Media Server'
+      - /mnt/user/docker/volumes/plex:/config/Library/Application Support/Plex Media Server/
       - /mnt/user/library/shows:/tv
       - /mnt/user/library/movies:/movies
       - /mnt/user/library/music:/music
