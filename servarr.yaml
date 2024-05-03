@@ -9,6 +9,7 @@ services:
       - PGID=100
       - TZ=America/Chicago
       - VERSION=docker
+      - ADVERTISE_IP=https://plex.actuary.dev
       - PLEX_CLAIM #Set equal to https://www.plex.tv/claim/ via github actions
     volumes:
       - /mnt/user/docker/volumes/plex:/config/Library/Application Support/Plex Media Server/
