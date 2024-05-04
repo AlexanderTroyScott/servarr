@@ -21,6 +21,7 @@ services:
       - 32400:32400 
     networks:
      - reverse-proxy
+     - swarm-macvlan
     deploy:
       labels:
         - "traefik.enable=true"
@@ -115,6 +116,8 @@ services:
 
 networks:
   reverse-proxy:
+    external: true
+  swarm-macvlan:
     external: true
 
 #gluetun:
