@@ -67,7 +67,7 @@ services:
     volumes:
       - /mnt/user/docker/volumes/sonarr:/config
       - /mnt/user/library/shows:/data/shows
-      - /mnt/user/library/tv:/data/tv
+      #- /mnt/user/library/tv:/data/tv
       - /mnt/user/library/anime/series:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets:/data/usenets
