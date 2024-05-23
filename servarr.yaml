@@ -30,7 +30,7 @@ services:
         - "traefik.http.routers.plex.tls.certresolver=myresolver"
         - "traefik.http.services.plex.loadbalancer.server.port=32400"
   sabnzbd:
-    image: lscr.io/linuxserver/sabnzbd:latest
+    image: lscr.io/linuxserver/sabnzbd:4.3.1
     environment:
       - PUID=99
       - PGID=100
