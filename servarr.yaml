@@ -17,6 +17,7 @@ services:
       - /mnt/user/library/movies:/movies
       - /mnt/user/library/music:/music
       - /mnt/user/library/anime:/anime
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 32400:32400 
     networks:
@@ -54,6 +55,7 @@ services:
       - /mnt/user/library/music:/data/music
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets:/data/usenets
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 8686:8686
     networks:
@@ -72,6 +74,7 @@ services:
       - /mnt/user/library/anime/series:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets/complete/:/data/usenets/complete/
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 8989:8989
     networks:
@@ -97,6 +100,7 @@ services:
       - /mnt/user/library/anime/movies:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
       - /mnt/user/library/.usenets:/data/usenets
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 7878:7878
     networks:
@@ -109,6 +113,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt/user/docker/volumes/prowlarr:/config
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "9696:9696"
     networks:
