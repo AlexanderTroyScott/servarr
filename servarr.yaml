@@ -71,7 +71,7 @@ services:
       #- /mnt/user/library/tv:/data/tv
       - /mnt/user/library/anime/series:/data/anime
       - /mnt/user/library/.torrents:/data/torrents
-      - /mnt/user/library/.usenets:/data/usenets
+      - /mnt/user/library/.usenets/complete/:/data/usenets/complete/
     ports:
       - 8989:8989
     networks:
